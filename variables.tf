@@ -1,4 +1,4 @@
-# Variables for VPC Module
+# Variables for Security Module
 
 variable "environment" {
   description = "Environment name"
@@ -10,22 +10,13 @@ variable "project_name" {
   type        = string
 }
 
-variable "vpc_cidr" {
-  description = "CIDR block for VPC"
+variable "vpc_id" {
+  description = "ID of the VPC"
   type        = string
 }
 
-variable "azs" {
-  description = "Availability zones"
-  type        = list(string)
-}
-
-variable "private_subnets" {
-  description = "CIDR blocks for private subnets"
-  type        = list(string)
-}
-
-variable "public_subnets" {
-  description = "CIDR blocks for public subnets"
-  type        = list(string)
+variable "vpc_cidr" {
+  description = "CIDR block of the VPC"
+  type        = string
+  default     = "10.0.0.0/16"
 }
